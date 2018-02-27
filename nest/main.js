@@ -1,21 +1,23 @@
 const canvas = document.getElementById('canvas')
 const ctx = canvas.getContext('2d')
+// cursor generated point
 const current_point = {
   x: null,
   y: null,
   max: 25000,
 }
 
-const WIDTH = document.documentElement.clientWidth
-const HEIGHT = document.documentElement.clientHeight
+const WIDTH = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
+const HEIGHT = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
 const random_points = []
 let all_points = []
 
 canvas.width = WIDTH
 canvas.height = HEIGHT
-canvas.style = 'position: flxed; top: 0px; left: 0px'
+canvas.style = 'position: fixed; top: 0px; left: 0px'
 
 function draw() {
+  // clear screen
   ctx.clearRect(0, 0, WIDTH, HEIGHT)
   let i, pi, x_dist, y_dist, dist, w
 
@@ -32,6 +34,7 @@ function draw() {
         x_dist = p.x - pi.x
         y_dist = p.y - pi.y
         dist = x_dist * x_dist + y_dist * y_dist
+        // adhere to current point
         dist < pi.max && (pi === current_point && dist >= pi.max / 2 && (p.x -= 0.03 * x_dist, p.y -= 0.03 * y_dist))
         w = (pi.max - dist) / pi.max
         ctx.beginPath()
@@ -62,6 +65,7 @@ for (let i = 0; i < 180; i++) {
   const y = Math.random() * HEIGHT
   xa = 2 * Math.random() - 1
   ya = 2 * Math.random() - 1
+  // adhere distance
   max = 6000
   random_points[i] = { x, y, xa, ya, max }  
 }
