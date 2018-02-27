@@ -1,0 +1,24 @@
+{
+    "name": "canvas-related",
+    "version": "0.1.0",
+    "description": "A nest background of website draw on canvas with vanilla JS.",
+    "main": "index.js",
+    "scripts": {
+        "test": "npm run lint"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Ericteen/canvas-related.git"
+    },
+    "keywords": [
+        "canvas",
+        "html5",
+        "javascript"
+    ],
+    "author": "cheng_guanghui <chengteen@yeah.net> (https://github.com/Ericteen)",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/Ericteen/canvas-related/issues"
+    },
+    "homepage": "https://github.com/Ericteen/canvas-related#readme"
+}
