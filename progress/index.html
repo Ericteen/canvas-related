@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>progress animation</title>
+</head>
+
+<body>
+    <canvas id="canvas-progress" style="background-color:#000" width="300px" height="300px"></canvas>
+</body>
+<script src="./progress.js"></script>
+<script>
+    var progress = new Progress({
+        element: document.getElementById('canvas-progress')
+    })
+    var n = 0
+
+    var timer = setInterval(() => {
+        if (n++ !== 100) {
+            progress.setProgress(n)
+        } else {
+            clearInterval(timer)
+        }
+    }, 100)
+</script>
+
+</html>
